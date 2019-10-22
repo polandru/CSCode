@@ -5,7 +5,6 @@ public class Story {
      *Do not touch this part
      * **************************************************/
     Scanner sc = new Scanner(System.in);
-    boolean plays_fortnite;
     public static final String RESET = "\u001B[0m";
     public static final String BLACK = "\u001B[30m";
     public static final String RED = "\u001B[31m";
@@ -128,98 +127,101 @@ public class Story {
      * Your code starts below
      ******************************************************/
     public void start() {
-//        print("This is normal text");
-//        pause();
-//        print("This is some "+RED+"c"+BLUE+"o"+YELLOW+"l"+CYAN+"o"+PURPLE+"r"+RESET+"ful text");
-//        System.out.println();
-//        pause();
-//        print("You can also have "+BRIGHT_BG_PURPLE+BRIGHT_WHITE+"background"+RESET+" colors");
-//        pause();
-//        System.out.println();
-//        System.out.print("Gracelynn and Claire were arrested by the ");
-//        flash(BG_RED+"COPS",BG_BLUE+"COPS"," at a Post Malone concert");
-//        pause();
-//        crawl("BREAKING NEWS: Mr Perdomo is really tired!");
-//        System.out.println();
-//
-//
-//        print("Asking a question. choice1 or choice2:");
-//        String ans = sc.nextLine();
-//        if(ans.equalsIgnoreCase("choice1")){
-//            choice1();
-//        }else{
-//            choice2();
-//        }
+        System.out.println(" ");
+        System.out.println(BLACK+"Your vision adjust to the new room that you are in.");
+        System.out.println("You thought you did everything right, yet you somehow made a mistake.");
+        System.out.println("The room seems to be empty.");
+        pause();
+        System.out.println("You need to find a way out of the room");
 
-        print(BRIGHT_BG_WHITE + BLACK + "You're asleep, dreaming, you feel oddly comfortable, you're walking down a dimly lit street." + "\n");
-        print(BRIGHT_BG_WHITE + BLACK + "A Hooded figure approaches you, you can't seem to make out his face." + "\n");
-        print(BG_RED + BLACK + "All of a sudden, he grabs your face with a grip of steel, despite this, he whispers to you" + RESET + "\n" + "\n");
-
-        print(RED + "Do you play fortnite?(Y/N)"+RESET);
-
+        print("Should you:" + RED + "1) Stay in the room " + BLACK + "or " + GREEN + "2) Leave the room");
         String ans = sc.nextLine();
-        if(ans.equalsIgnoreCase("Y"))
-            plays_fortnite = true;
-        else
-            plays_fortnite = false;
-
-        WAKEUP();
-
-
-    }
-    public void WAKEUP(){
-        if (plays_fortnite = true) {
-            print("You wake up peacefully, there's a whole day ahead of you.");
-            schoolOrComputer();
-        }
-
-        if (plays_fortnite = false) {
-            print("You wake up feeling as if you were in a terrible nightmare, you are sweating all over. \n  A heavy bead of sweat drops down your chin");
-            schoolOrComputer();
-
-
-        }
-    }
-
-    public void schoolOrComputer(){
-        print("What do you do now? Go to school or go to the computer?(C/S)");
-        String ans = sc.nextLine();
-        if(ans.equalsIgnoreCase("S")){
-            school();
+        if(ans.equalsIgnoreCase("1")){
+            start();
         }else{
-            computer();
+            Part2();
         }
     }
 
-    public void computer(){
-        print("You boot up your old computer, you've had it for awhile."+"\n"+"You can browse the web or play Fortnite, which one do you choose?(F/B)");
+    public void Part2(){
+        System.out.println(BLACK+"You exit the room and enter a semi-busy office.");
+        System.out.println("You walk to see everyone in the room and you find Jim.");
+        System.out.println("You know Jim will be dying today so you need to save him.");
+        pause();
+
+        print("Should you: "+ GREEN + "1) Grab Jim and take him out of the office "+BLACK+"or "+RED+"2) Leave Jim alone");
         String ans = sc.nextLine();
-        int num=0;
-        if(ans.equalsIgnoreCase("B")){
-            num = (int)Math.random()*100;
+        if(ans.equalsIgnoreCase("1")){
+            Part3();
+        }else{
+            start();
+        }
 
-            if(num <26){
-                print(GREEN + "One of your Friends messages you on AOL. He says:'hey man wanna play some fortnite' he sent it at 11 a' clock last night" + RESET);
-            }
+    }
+    public void Part3(){
+        System.out.println(BLACK+"You take Jim out and tell him about his death.");
+        System.out.println("To protect him, you go to your car and grab the gun out of the console.");
+        System.out.println("You need to find out how Jim dies.");
+        pause();
 
-            if(num>25 && num <51){
-                print(GREEN + "Looks like everyone is talking about the new Fortnite tournament, the grand prize is one hundred million dollars" + RESET);
-            }
-
-            if(num>50 && num <76 ){
-                print(GREEN + "Uh Oh! You clicked on a funny looking add and almost downloaded a virus, luckily your antivirus stopped you." + RESET);
-            }
-
-            if(num>76){
-                print(GREEN + "You browse some Minecraft mods, you download some cool ones to try out later" + RESET);
-            }
-
+        print("Should you: ");
+        print(GREEN+"1) Take Jim to a Psychic ");
+        print(BLACK+"or ");
+        print(RED+"2) Not care enough to find out and leave");
+        String ans = sc.nextLine();
+        if(ans.equalsIgnoreCase("1")){
+            Part4();
+        }else{
+            start();
         }
     }
+    public void Part4(){
+        System.out.println(BLACK+"You walk into the psychic's office.");
+        System.out.println("You ask if the psychic can tell you your future.");
+        System.out.println("The psychic says she can tell you your future...");
+        pause();
+        System.out.println("for the price of $500.");
 
-    public void school(){
+        print("Should you: ");
+        print(RED+"1) Leave because of the outrageous price ");
+        print(BLACK+"or ");
+        print(GREEN+"Pay the $500 to save your friend Jim");
+        String ans = sc.nextLine();
+        if(ans.equalsIgnoreCase("1")){
+            start();
+        }else{
+            Part5();
+        }
 
     }
+    public void Part5(){
+        System.out.println(BLACK+"The Psychic sits you down to tell you your future.");
+        System.out.println("She tells you that Jim will die.");
+        pause();
+        System.out.println("She says you kill him.");
+        System.out.println("You ask how to save his life");
+        System.out.println("She tells there is only one way to save hi life...");
+        pause();
+        System.out.println("You must die to save Jim");
+        System.out.println("You take your gun out, ready to shoot either you or Jim");
 
-
+        print("Should you: ");
+        print(GREEN+"1) Kill yourself to save Jim ");
+        print(BLACK+"or ");
+        print(RED+"Kill Jim to save yourself");
+        String ans = sc.nextLine();
+        if(ans.equalsIgnoreCase("1")){
+            start();
+        }else{
+            conclusion();
+        }
+    }
+    public void conclusion(){
+        System.out.println(BLACK+"The psychic stands in awe that you would kill your friend.");
+        System.out.println("She made the whole thing up about you having to kill him.");
+        pause();
+        System.out.println("You a selfish and twisted person for killing your friend to 'save' your life");
+    }
 }
+
+

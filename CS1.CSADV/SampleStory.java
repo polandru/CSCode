@@ -1,11 +1,9 @@
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
-public class Story  {
+public class SampleStory {
     /****************************************************
      *Do not touch this part
      * **************************************************/
-
     Scanner sc = new Scanner(System.in);
     public static final String RESET  = "\u001B[0m";
     public static final String BLACK  = "\u001B[30m";
@@ -119,84 +117,57 @@ public class Story  {
     }
 
     public static void main(String args[]) {
-        (new Story()).start();
+        (new SampleStory()).start();
     }
 
     /******************************************************
      * Your code starts below
      ******************************************************/
     public void start() {
-        print("This is normal text");
-        pause();
-        print("This is some "+RED+"c"+BLUE+"o"+YELLOW+"l"+CYAN+"o"+PURPLE+"r"+RESET+"ful text");
+        print("I woke up today at 5 am. I picked the light blue shirt, and black pants");
         System.out.println();
-        pause();
-        print("You can also have "+BRIGHT_BG_PURPLE+BRIGHT_WHITE+"background"+RESET+" colors");
-        pause();
-        System.out.println();
-        System.out.print("Gracelynn and Claire were arrested by the ");
-        flash(BG_RED+"COPS",BG_BLUE+"COPS"," at a Post Malone concert");
-        pause();
-        crawl("BREAKING NEWS: Mr Perdomo is really tired!");
-        System.out.println();
-
-
-        print("You’re in Computer Science, when the intercom unexpectantly announces that a school shooter has entered the building. With this news you must decide what you need to do to make it out alive.Choose to either 1 You rush out into the hall or 2 You block the door  \n");
+        print("What route should I take to work? East or West");
         String ans = sc.nextLine();
-        if(ans.equalsIgnoreCase("You rush out into the hall")){
-            choice1();
+        if(ans.equalsIgnoreCase("east")){
+            print("I tried to outrun the train but failed\n\n");
+            print("The End");
         }else{
-            choice2();
+            westRoute();
         }
     }
 
-    public void choice1(){
-        System.out.println("You take a "+YELLOW+"quick"+RESET+"glance both ways on your right you see a crowded stairwell filled with people running just ahead and on your far left, at the end of the hall you see an empty stairwell which do you take.1 Run with the crowd 2 Go the empty long way\n");
+    public void westRoute(){
+        print("I am passing the gas station. They sell breakfast tacos.\n\n");
+        print("Should I get one?Yes or No");
         String ans = sc.nextLine();
-        if(ans.equalsIgnoreCase("Run with the crowd")){
-            choice1 ();
+        if(ans.equalsIgnoreCase("yes")){
+
+            tacos();
         }else{
-            choice11();
+            noTacos();
         }
     }
 
-    public void choice2(){
-        System.out.println("You decide to "+BLUE+"block"+RESET+"the door, but you are torn on what to "+BLUE+"block"+RESET+" the door with do you use 1 Use Mr. Berdomo’s desk 2 Use large metal filing cabinets.");
+    public void tacos(){
+        print("Oops, I got food poisoning\n");
+        print("I'm very sick. I don't know if I should go to the hospital or stay at home");
         String ans = sc.nextLine();
-        if(ans.equalsIgnoreCase("Use Mr. Berdomo’s desk")) {
-            choice2();
+        if(ans.equalsIgnoreCase("go")){
+            print("I get an antibiotic-resistant resistant infection and die\n\n The End");
         }else{
-            choice22();
+            print("I recover and live happily ever after\n\n The End");
+        }
+    }
+
+    public void noTacos(){
+        print("I get to work. I have a great day! Should I go to Chick-fil-a to celebrate?");
+        String ans = sc.nextLine();
+        if(ans.equalsIgnoreCase("Yes")){
+            tacos();
+        }else{
+            print("I get home. I grade some papers. I watch some TV. I go to bed \n\n The End");
         }
 
     }
-    public void choice11(){
-        System.out.println("You go the long way, unfortunately he finds you.Do you 1 Prepare to"+RED+" fight"+RESET+" him 2"+GREEN+"Hide"+RESET+" under stairwell");
-        String ans = sc.nextLine();
-        if(ans.equalsIgnoreCase("Prepare to fight him")){
-            choice111();
 
-        }else{
-            choice1();
-        }
-
-    }
-    public void choice22(){
-        System.out.println("Although"+BLUE+"the window and door was blocked by the "+YELLOW+"cabinets"+RESET+", he decides to break in anyways.Do you 1 hide under the desk 2 Prepare to fight him ");
-        String ans = sc.nextLine();
-        if(ans.equalsIgnoreCase("Prepare to fight him")){
-            choice111();
-        }else{
-            choice2();
-        }
-    }
-    public void choice111(){
-        System.out.println("You haven chosen to fight pick a "+RED+"weapon"+RESET+"1 hydro flask  2 facts and knowledge 3 geico 4 Your astonishing good looks");
-        String ans = sc.nextLine();
-        if(ans.equalsIgnoreCase("geico")){
-            System.out.print("You tell him he can save 15% or more on car insurance with Geico. He gets really excited, hands you his gun and thanks you as he leaves. Suddenly the police arrive and see you with the gun. You are shot and killed, a few seconds go by and the police squad walks over to you and default dances.");
-        }else{
-            choice1 ();
-        }
-    }
 }
